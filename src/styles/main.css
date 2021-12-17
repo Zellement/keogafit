@@ -9,11 +9,11 @@ html {
 
 body {
   font-size: 62.5%;
-  @apply font-sans text-sm antialiased font-normal leading-normal xl:text-base;
+  @apply font-sans text-sm antialiased font-normal leading-normal bg-red-100 xl:text-base;
 }
 
 .container {
-  @apply mx-auto max-w-screen-3xl;
+  @apply px-4 mx-auto max-w-screen-3xl;
 }
 
 a {
@@ -25,32 +25,32 @@ a {
 }
 
 @font-face {
-  font-family: 'Vollkorn';
-  src: url('../fonts/Vollkorn-Regular.ttf') format('truetype');
+  font-family: "Vollkorn";
+  src: url("../fonts/Vollkorn-Regular.ttf") format("truetype");
   font-display: swap;
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Vollkorn';
-  src: url('../fonts/Vollkorn-Italic.ttf') format('truetype');
+  font-family: "Vollkorn";
+  src: url("../fonts/Vollkorn-Italic.ttf") format("truetype");
   font-display: swap;
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Yaldevi';
-  src: url('../fonts/Yaldevi-Regular.ttf') format('truetype');
+  font-family: "Yaldevi";
+  src: url("../fonts/Yaldevi-Regular.ttf") format("truetype");
   font-display: swap;
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Yaldevi';
-  src: url('../fonts/Yaldevi-SemiBold.ttf') format('truetype');
+  font-family: "Yaldevi";
+  src: url("../fonts/Yaldevi-SemiBold.ttf") format("truetype");
   font-display: swap;
   font-weight: 600;
   font-style: normal;
@@ -75,6 +75,18 @@ h1 {
 
 h2 {
   @apply text-lg;
+}
+
+/* --------------------------
+Buttons
+-------------------------- */
+
+.btn {
+  @apply px-4 py-2 tracking-wider uppercase rounded-lg;
+}
+
+.btn--white-outline {
+  @apply text-white border-2 border-white;
 }
 
 /* --------------------------

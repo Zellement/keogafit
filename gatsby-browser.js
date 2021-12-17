@@ -1,7 +1,6 @@
 import React from "react";
 import Layout from "./src/components/Layout";
 import "./src/styles/main.css"
-import "@fontsource/open-sans" // Defaults to weight 400 with all styles included.
 
 const transitionDelay = 350;
 

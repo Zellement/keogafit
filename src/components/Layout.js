@@ -39,7 +39,7 @@ const Layout = ({ children, location }) => {
   `)
 
   return (
-    <>
+    <div className="container">
       <Header siteTitle={data.site.siteMetadata.title} />
       <AnimatePresence>
         <motion.main
@@ -52,7 +52,7 @@ const Layout = ({ children, location }) => {
         {children}
         </motion.main>
       </AnimatePresence>
-    </>
+    </div>
   )
 }
 
