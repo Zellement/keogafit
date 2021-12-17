@@ -26,7 +26,7 @@ export default function Nav() {
           " bg-gradient-to-b from-grenadier-500 to-grenadier-700 text-white text-4xl gap-8 absolute inset-0 z-40 w-full h-full"
         }
       >
-        <ul className="flex flex-col p-8">
+        <ul className={(showMenu ? "translate-x-full opacity-0" : "translate-x-0 opacity-100") + " transition duration-1000 transform flex flex-col p-8 max-w-screen-lg m-auto"}>
           <li>
             <Link
               className=""

@@ -96,3 +96,12 @@ Content
 .content p {
   @apply mb-6;
 }
+
+.with-after-line {
+  @apply relative inline-block pr-32 lowercase lg:pr-48;
+}
+
+.with-after-line:after {
+  content: '';
+  @apply absolute bottom-0 right-0 h-px mb-2 bg-grenadier-200 w-28 lg:w-40;
+}
