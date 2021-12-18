@@ -1,10 +1,11 @@
 import React from "react"
 import Seo from "../components/Seo"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Ampersand from "../components/Ampersand"
 
 const IndexPage = ({ data }) => {
+  // console.log(data.datoCmsHomePage.buttons)
   return (
     <>
       <Seo title="Home" />
@@ -27,17 +28,29 @@ const IndexPage = ({ data }) => {
         </div>
 
         <div className="flex flex-col gap-8 lg:gap-16">
-          <p className="self-start font-serif text-lg italic with-after-line md:text-xl text-grenadier-200 lg:text-3xl">
+          <p className="self-start font-serif text-lg italic leading-none with-after-line md:text-xl text-grenadier-200 lg:text-3xl">
             {data.datoCmsHomePage.introStatement}
           </p>
 
-          <div className="relative flex flex-col gap-2 text-4xl font-bold lowercase md:text-5xl lg:text-6xl xl:text-8xl">
+          <div className="relative flex flex-col text-3xl font-semibold lowercase sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl">
             <span className="leading-tight">Mindfulness</span>
             <span className="leading-tight">body conditioning</span>
 
-            <span className="absolute w-20 left-[237px] md:w-24 md:left-[287px] lg:left-[356px] lg:w-28 xl:w-40 xl:left-[474px]">
+            <span className="absolute w-20 left-[198px] -mt-1 sm:left-[237px] md:w-24 md:left-[287px] lg:left-[356px] lg:w-28 xl:w-40 xl:left-[474px]">
               <Ampersand />
             </span>
+          </div>
+
+          <div className="flex flex-row flex-wrap gap-2">
+            {data.datoCmsHomePage.buttons.map((button, index) => (
+              <Link
+                className="btn btn--white-outline"
+                to={button.link.slug + "/"}
+                key={index}
+              >
+                {button.link.pageTitle}
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -59,6 +72,7 @@ export const query = graphql`
               id
             }
             slug
+            pageTitle
           }
         }
       }

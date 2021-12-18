@@ -16,14 +16,32 @@ body {
   @apply px-4 mx-auto max-w-screen-3xl;
 }
 
-a {
-  @apply transition duration-300;
+a:not[.btn] {
+  @apply transition duration-700;
 }
 
 [class*="transition"] {
   @apply duration-300;
 }
 
+/* Sans */
+@font-face {
+  font-family: "Yaldevi";
+  src: url("../fonts/Yaldevi-Regular.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Yaldevi";
+  src: url("../fonts/Yaldevi-SemiBold.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 600;
+  font-style: semi-bold;
+}
+
+/* Serif */
 @font-face {
   font-family: "Vollkorn";
   src: url("../fonts/Vollkorn-Regular.ttf") format("truetype");
@@ -38,22 +56,6 @@ a {
   font-display: swap;
   font-weight: 400;
   font-style: italic;
-}
-
-@font-face {
-  font-family: "Yaldevi";
-  src: url("../fonts/Yaldevi-Regular.ttf") format("truetype");
-  font-display: swap;
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Yaldevi";
-  src: url("../fonts/Yaldevi-SemiBold.ttf") format("truetype");
-  font-display: swap;
-  font-weight: 600;
-  font-style: normal;
 }
 
 /* --------------------------
@@ -82,12 +84,17 @@ Buttons
 -------------------------- */
 
 .btn {
-  @apply px-4 py-2 tracking-wider uppercase rounded-lg;
+  @apply relative z-10 px-5 py-2 text-xs tracking-wider uppercase transition-all duration-700 rounded-lg lg:text-sm;
 }
 
 .btn--white-outline {
   @apply text-white border-2 border-white;
 }
+
+.btn--white-outline:hover {
+  @apply bg-white shadow-xl text-grenadier-500;
+}
+
 
 /* --------------------------
 Content
