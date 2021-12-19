@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from "framer-motion"
 
 import Header from "./Header"
 import Footer from "./Footer"
@@ -17,7 +17,7 @@ const variants = {
     transition: {
       duration: duration,
       delay: duration,
-      when: 'beforeChildren',
+      when: "beforeChildren",
     },
   },
   exit: {
@@ -40,21 +40,18 @@ const Layout = ({ children, location }) => {
   `)
 
   return (
-    <div className="container">
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <AnimatePresence>
-        <motion.main
-          key={location.pathname}
-          variants={variants}
-          initial="initial"
-          animate="enter"
-          exit="exit"
-        >
+    <AnimatePresence>
+      <motion.main
+        key={location.pathname}
+        variants={variants}
+        initial="initial"
+        animate="enter"
+        exit="exit"
+      >
         {children}
-        </motion.main>
-        <Footer />
-      </AnimatePresence>
-    </div>
+      </motion.main>
+      <Footer />
+    </AnimatePresence>
   )
 }
 

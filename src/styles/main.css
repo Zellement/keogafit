@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-  @apply px-4 mx-auto max-w-screen-3xl;
+  @apply mx-auto max-w-screen-3xl;
 }
 
 a:not[.btn] {
@@ -105,10 +105,37 @@ Content
 }
 
 .with-after-line {
-  @apply relative inline-block pr-32 lowercase lg:pr-48;
+  @apply relative inline-block pr-32 font-serif text-lg italic leading-none lowercase lg:pr-48 md:text-xl lg:text-3xl;
 }
+
+/* --------------------------
+With After Line (title)
+-------------------------- */
 
 .with-after-line:after {
   content: '';
   @apply absolute bottom-0 right-0 h-px mb-2 bg-grenadier-200 w-28 lg:w-40;
 }
+
+/* --------------------------
+With After Line (title)
+-------------------------- */
+
+.hero__content {
+}
+
+.hero__content ul {
+  @apply flex flex-row flex-wrap gap-4 mt-4;
+}
+
+.hero__content li {
+  @apply relative pl-8;
+}
+
+.hero__content ul li:before {
+  content: '';
+  @apply absolute left-0 w-4 h-4 transform -translate-y-1/2 bg-white rounded-full top-1/2;
+}
+
+
+

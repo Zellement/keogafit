@@ -3,12 +3,14 @@ import Seo from "../components/Seo"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { graphql, Link } from "gatsby"
 import Ampersand from "../components/Ampersand"
+import Header from "../components/Header"
 
 const IndexPage = ({ data }) => {
   // console.log(data.datoCmsHomePage.buttons)
   return (
     <>
       <Seo title="Home" />
+      <Header />
       {/* Full background image */}
       <div className="fixed inset-0 w-full h-screen bg-red-500 -z-10">
         <GatsbyImage
@@ -22,13 +24,13 @@ const IndexPage = ({ data }) => {
           alt={data.datoCmsHomePage.backgroundImage.alt}
         />
       </div>
-      <section className="container mt-20 text-white">
+      <section className="container p-8 text-white lg:p-16 xl:p-24">
         <div className="content">
           <h1 className="sr-only">Keogafit</h1>
         </div>
 
-        <div className="flex flex-col gap-8 lg:gap-16">
-          <p className="self-start font-serif text-lg italic leading-none with-after-line md:text-xl text-grenadier-200 lg:text-3xl">
+        <div className="flex flex-col gap-8">
+          <p className="self-start text-grenadier-200 with-after-line">
             {data.datoCmsHomePage.introStatement}
           </p>
 
