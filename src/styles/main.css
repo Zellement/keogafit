@@ -9,7 +9,7 @@ html {
 
 body {
   font-size: 62.5%;
-  @apply font-sans text-sm antialiased font-normal leading-normal bg-red-100 xl:text-base;
+  @apply font-sans text-sm antialiased font-normal leading-normal bg-white xl:text-base;
 }
 
 .container {
@@ -68,15 +68,23 @@ h3,
 h4,
 h5,
 h6 {
-  @apply p-0 mb-6 font-bold leading-tight;
+  @apply p-0 mb-6 leading-tight ;
 }
 
 h1 {
-  @apply text-xl;
+  @apply font-semibold;
 }
 
 h2 {
-  @apply text-lg;
+  @apply font-normal lowercase text-2xl md:text-4xl xl:text-6xl font-serif ;
+}
+
+h2 span {
+  @apply text-grenadier-500;
+}
+
+.content_block.bg-grenadier-500 h2 span {
+  @apply text-grenadier-100;
 }
 
 /* --------------------------
@@ -99,6 +107,7 @@ Buttons
 /* --------------------------
 Content
 -------------------------- */
+
 
 .content p {
   @apply mb-6;
@@ -129,7 +138,7 @@ With After Line (title)
 }
 
 .hero__content li {
-  @apply relative pl-8;
+  @apply relative pl-8 leading-tight;
 }
 
 .hero__content ul li:before {

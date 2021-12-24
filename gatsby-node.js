@@ -13,7 +13,7 @@ exports.createPages = async function ({ actions, graphql }) {
   `)
   data.allDatoCmsPage.edges.forEach((edge) => {
     actions.createPage({
-      path: edge.node.slug,
+      path: edge.node.slug + "/",
       component: require.resolve(`./src/templates/page-standard.js`),
       context: { slug: edge.node.slug },
     })

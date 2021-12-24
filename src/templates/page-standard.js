@@ -7,19 +7,24 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 export default function PageStandard({ data }) {
   const post = data.datoCmsPage
+  let imageRight = false
   return (
     <>
       <Seo title={post.seo.title} description={post.seo.description} />
       <div className="relative">
         <Header />
 
-        <div className="container flex flex-col gap-8 px-8 py-16 lg:p-16 xl:p-24">
+        <div className="container flex flex-col gap-8 px-8 py-16 text-white lg:p-16 xl:p-24 3xl:px-2">
+          <h1 className="self-start text-5xl lg:text-7xl xl:text-8xl">
+            {post.pageTitle}
+          </h1>
+
           <p className="self-start with-after-line text-grenadier-200">
             {post.minorStatement}
           </p>
 
           <HTMLContent
-            className="font-serif text-xl lg:text-3xl max-w-[800px] text-white hero__content "
+            className="font-serif text-xl lg:text-3xl max-w-[800px] hero__content "
             content={post.majorStatement}
           />
 
@@ -31,6 +36,59 @@ export default function PageStandard({ data }) {
             />
           </div>
         </div>
+      </div>
+      <div className="grid grid-cols-1 gap-16 mx-auto mt-16 max-w-screen-4xl">
+        {post.pageBuilder.map((content, index) => {
+          switch (content.model.apiKey) {
+            case "content_block":
+              imageRight = !imageRight
+              return (
+                <div
+                  key={index}
+                  className={
+                    "grid grid-cols-1 lg:grid-cols-2 " +
+                    (imageRight
+                      ? null
+                      : "bg-grenadier-500 content_block text-white")
+                  }
+                >
+                  <div
+                    className={
+                      "order-last overflow-hidden " +
+                      (imageRight
+                        ? "rounded-tl-2xl rounded-bl-2xl"
+                        : "lg:order-first rounded-tr-2xl rounded-br-2xl")
+                    }
+                  >
+                    <GatsbyImage
+                      className={"object-cover w-full h-full"}
+                      image={content.image.gatsbyImageData}
+                      alt={content.image.alt}
+                    />
+                  </div>
+
+                  <div
+                    className={
+                      "p-16 flex lg:my-20 md:p-24 xl:p-40 " +
+                      (imageRight
+                        ? "bg-white lg:-mr-20 relative rounded-tr-2xl rounded-br-2xl"
+                        : "bg-grenadier-500 lg:-ml-20 relative rounded-tl-2xl rounded-bl-2xl")
+                    }
+                  >
+                    <div className="my-auto">
+                      <h2>
+                        <HTMLContent content={content.contentTitle} />
+                      </h2>
+                      <HTMLContent
+                        className="content"
+                        content={content.content}
+                      />
+                    </div>
+                  </div>
+                </div>
+              )
+          }
+        })}
       </div>
     </>
   )
@@ -45,6 +103,7 @@ export const query = graphql`
       slug
       heroImage {
         gatsbyImageData
+        alt
       }
       seo {
         description
@@ -53,10 +112,14 @@ export const query = graphql`
       pageBuilder {
         ... on DatoCmsContentBlock {
           id
+          model {
+            apiKey
+          }
           content
           contentTitle
           image {
             gatsbyImageData
+            alt
           }
         }
       }
