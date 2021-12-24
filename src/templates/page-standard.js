@@ -4,6 +4,8 @@ import Seo from "../components/Seo"
 import { HTMLContent } from "../components/Content"
 import Header from "../components/Header"
 import { GatsbyImage } from "gatsby-plugin-image"
+import { Fade } from "react-reveal"
+import ContentBlock__Content from "../components/content-block/Content.js"
 
 export default function PageStandard({ data }) {
   const post = data.datoCmsPage
@@ -14,7 +16,7 @@ export default function PageStandard({ data }) {
       <div className="relative">
         <Header />
 
-        <div className="container flex flex-col gap-8 px-8 py-16 text-white lg:p-16 xl:p-24 3xl:px-2">
+        <div className="container flex flex-col px-8 py-16 text-white lg:p-16 xl:p-24 3xl:px-2">
           <h1 className="self-start text-5xl lg:text-7xl xl:text-8xl">
             {post.pageTitle}
           </h1>
@@ -37,55 +39,42 @@ export default function PageStandard({ data }) {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-16 mx-auto mt-16 max-w-screen-4xl">
+      <div className="grid grid-cols-1 mx-auto mt-16 overflow-hidden max-w-screen-4xl">
         {post.pageBuilder.map((content, index) => {
           switch (content.model.apiKey) {
             case "content_block":
               imageRight = !imageRight
               return (
-                <div
-                  key={index}
-                  className={
-                    "grid grid-cols-1 lg:grid-cols-2 " +
-                    (imageRight
-                      ? null
-                      : "bg-grenadier-500 content_block text-white")
-                  }
-                >
+                <Fade>
                   <div
+                    key={index}
                     className={
-                      "order-last overflow-hidden " +
+                      "grid grid-cols-1 lg:grid-cols-2 py-40 " +
                       (imageRight
-                        ? "rounded-tl-2xl rounded-bl-2xl"
-                        : "lg:order-first rounded-tr-2xl rounded-br-2xl")
+                        ? null
+                        : "bg-grenadier-500 content_block text-white")
                     }
                   >
-                    <GatsbyImage
-                      className={"object-cover w-full h-full"}
-                      image={content.image.gatsbyImageData}
-                      alt={content.image.alt}
-                    />
-                  </div>
-
-                  <div
-                    className={
-                      "p-16 flex lg:my-20 md:p-24 xl:p-40 " +
-                      (imageRight
-                        ? "bg-white lg:-mr-20 relative rounded-tr-2xl rounded-br-2xl"
-                        : "bg-grenadier-500 lg:-ml-20 relative rounded-tl-2xl rounded-bl-2xl")
-                    }
-                  >
-                    <div className="my-auto">
-                      <h2>
-                        <HTMLContent content={content.contentTitle} />
-                      </h2>
-                      <HTMLContent
-                        className="content"
-                        content={content.content}
+                    <div
+                      className={
+                        "order-last overflow-hidden " +
+                        (imageRight
+                          ? "rounded-tl-2xl rounded-bl-2xl"
+                          : "lg:order-first rounded-tr-2xl rounded-br-2xl")
+                      }
+                    >
+                      <GatsbyImage
+                        className={"object-cover w-full h-full"}
+                        image={content.image.gatsbyImageData}
+                        alt={content.image.alt}
                       />
                     </div>
+
+                    <div className={"flex lg:my-20"}>
+                      <ContentBlock__Content contentTitle={content.contentTitle} content={content.content} imageRight={imageRight} />
+                    </div>
                   </div>
-                </div>
+                </Fade>
               )
           }
         })}

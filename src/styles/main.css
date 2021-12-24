@@ -68,7 +68,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply p-0 mb-6 leading-tight ;
+  @apply p-0 mb-6 leading-tight;
 }
 
 h1 {
@@ -76,7 +76,7 @@ h1 {
 }
 
 h2 {
-  @apply font-normal lowercase text-2xl md:text-4xl xl:text-6xl font-serif ;
+  @apply font-serif text-2xl font-normal lowercase md:text-4xl xl:text-6xl ;
 }
 
 h2 span {
@@ -84,7 +84,7 @@ h2 span {
 }
 
 .content_block.bg-grenadier-500 h2 span {
-  @apply text-grenadier-100;
+  @apply text-grenadier-200;
 }
 
 /* --------------------------
@@ -110,7 +110,7 @@ Content
 
 
 .content p {
-  @apply mb-6;
+  @apply mb-6 lg:text-lg;
 }
 
 .with-after-line {
