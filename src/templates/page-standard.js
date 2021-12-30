@@ -14,10 +14,9 @@ export default function PageStandard({ data }) {
     <>
       <Seo title={post.seo.title} description={post.seo.description} />
       <div className="relative">
-        <Header />
 
-        <div className="container flex flex-col px-8 py-16 text-white lg:p-16 xl:p-24 3xl:px-2">
-          <h1 className="self-start text-5xl lg:text-7xl xl:text-8xl">
+        <div className="container flex flex-col px-8 py-16 lg:p-16 xl:p-24 3xl:px-2 pt-[200px] text-white lg:pt-[200px] xl:pt-[200px]">
+          <h1 className="self-start mb-8 text-5xl lg:text-7xl xl:text-8xl">
             {post.pageTitle}
           </h1>
 

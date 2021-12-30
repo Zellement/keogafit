@@ -22,8 +22,8 @@ export default function Nav() {
 
       <nav
         className={
-          (showMenu ? "hidden" : "flex") +
-          " bg-gradient-to-b from-grenadier-500 to-grenadier-700 text-white text-4xl gap-8 absolute inset-0 z-40 w-full h-full"
+          (showMenu ? "opacity-0 -translate-x-full pointer-events-none" : "translate-x-0 opacity-100 pointer-events-auto") +
+          " bg-gradient-to-b transform from-grenadier-500 to-grenadier-700 h-screen text-white text-4xl gap-8 absolute inset-0 z-40 w-full"
         }
       >
         <ul className={(showMenu ? "translate-x-full opacity-0" : "translate-x-0 opacity-100") + " transition duration-1000 transform flex flex-col p-8 max-w-screen-lg m-auto"}>

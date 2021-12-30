@@ -12,7 +12,7 @@ export default function ContentBlock__Content({
       <Fade left>
         <div
           className={
-            "my-auto relative p-16  md:p-24 xl:p-32 bg-white lg:-mr-32 rounded-tr-2xl rounded-br-2xl"
+            "my-auto relative p-16 md:p-24 xl:p-32 bg-white lg:-mr-16 2xl:-mr-32 rounded-tr-2xl rounded-br-2xl"
           }
         >
           <h2>
@@ -27,7 +27,7 @@ export default function ContentBlock__Content({
       <Fade right>
         <div
           className={
-            "my-auto relative p-16  md:p-24 xl:p-32 bg-grenadier-500 lg:-ml-32 rounded-tl-2xl rounded-bl-2xl"
+            "my-auto relative p-16  md:p-24 xl:p-32 bg-grenadier-500 lg:-ml-16 2xl:-ml-32 rounded-tl-2xl rounded-bl-2xl"
           }
         >
           <h2>

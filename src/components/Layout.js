@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { motion, AnimatePresence } from "framer-motion"
 
 import Footer from "./Footer"
+import Header from "./Header"
 
 const duration = 0.35
 
@@ -47,6 +48,7 @@ const Layout = ({ children, location }) => {
         animate="enter"
         exit="exit"
       >
+        <Header />
         {children}
       </motion.main>
       <Footer />

@@ -10,7 +10,6 @@ const IndexPage = ({ data }) => {
   return (
     <>
       <Seo title="Home" />
-      <Header />
       {/* Full background image */}
       <div className="fixed inset-0 w-full h-screen bg-red-500 -z-10">
         <GatsbyImage
@@ -24,7 +23,7 @@ const IndexPage = ({ data }) => {
           alt={data.datoCmsHomePage.backgroundImage.alt}
         />
       </div>
-      <section className="container p-8 text-white lg:p-16 xl:p-24">
+      <section className="container p-8 pt-[200px] text-white lg:p-16 xl:p-24 lg:pt-[240px] xl:pt-[300px]">
         <div className="content">
           <h1 className="sr-only">Keogafit</h1>
         </div>

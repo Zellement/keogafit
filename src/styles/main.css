@@ -146,5 +146,7 @@ With After Line (title)
   @apply absolute left-0 w-4 h-4 transform -translate-y-1/2 bg-white rounded-full top-1/2;
 }
 
-
-
+.post-header-fix {
+  @apply pt-[300px];
+  content: '';
+}
