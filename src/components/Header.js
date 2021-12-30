@@ -10,7 +10,10 @@ const Header = () => (
         <Link className="inline-block" to="/">
           <Logo className="h-40 max-w-[220px] md:max-w-[280px]" />
         </Link>
-        <Nav />
+        <Link to="/wayfinder/">
+          Wayfinder
+        </Link>
+        {/* <Nav /> */}
       </div>
     </div>
   </header>
