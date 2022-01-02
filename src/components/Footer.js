@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Footer() {
   return (
-    <footer className="absolute bottom-0 right-0 pr-2 tracking-widest text-right text-white uppercase text-2xs">
+    <footer className="p-4 tracking-widest text-right text-white uppercase bg-grenadier-800 text-2xs">
         <a
           href="https://www.zellement.com"
           target="_blank"

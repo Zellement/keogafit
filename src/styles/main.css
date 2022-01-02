@@ -9,7 +9,7 @@ html {
 
 body {
   font-size: 62.5%;
-  @apply font-sans text-sm antialiased font-normal leading-normal bg-white xl:text-base;
+  @apply font-sans text-sm antialiased font-normal leading-normal bg-grenadier-200 xl:text-base;
 }
 
 .container {
@@ -92,7 +92,7 @@ Buttons
 -------------------------- */
 
 .btn {
-  @apply relative z-10 px-5 py-2 text-xs tracking-wider uppercase transition-all duration-700 rounded-lg lg:text-sm;
+  @apply relative z-10 px-5 py-2 text-xs tracking-wider uppercase transition-all duration-700 rounded-lg cursor-pointer lg:text-sm;
 }
 
 .btn--white-outline {
@@ -146,7 +146,17 @@ With After Line (title)
   @apply absolute left-0 w-4 h-4 transform -translate-y-1/2 bg-white rounded-full top-1/2;
 }
 
-.post-header-fix {
-  @apply pt-[300px];
-  content: '';
+
+/* Wayfinder */
+
+.wayfinder ul li {
+  @apply flex;
+}
+
+.wayfinder ul li a {
+  @apply block w-full px-8 py-4 transition duration-700 hover:bg-grenadier-700 focus:bg-grenadier-700;
+}
+
+.wayfinder ul li:nth-of-type(odd) a {
+  @apply bg-grenadier-400 bg-opacity-10 hover:bg-grenadier-700 focus:bg-grenadier-700;
 }

@@ -4,6 +4,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { graphql, Link } from "gatsby"
 import Ampersand from "../components/Ampersand"
 import Header from "../components/Header"
+import Footer from "../components/Footer"
 
 const IndexPage = ({ data }) => {
   // console.log(data.datoCmsHomePage.buttons)
@@ -23,7 +24,7 @@ const IndexPage = ({ data }) => {
           alt={data.datoCmsHomePage.backgroundImage.alt}
         />
       </div>
-      <section className="container p-8 pt-[200px] text-white lg:p-16 xl:p-24 lg:pt-[240px] xl:pt-[300px]">
+      <section className=" min-h-screen container p-8 pt-[200px] text-white lg:p-16 xl:p-24 lg:pt-[240px] xl:pt-[300px]">
         <div className="content">
           <h1 className="sr-only">Keogafit</h1>
         </div>
@@ -55,6 +56,7 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   )
 }

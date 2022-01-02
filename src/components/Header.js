@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import Nav from "./Nav"
 import Logo from "./Logo"
+import { BiMenuAltRight } from "react-icons/bi"
 
 const Header = () => (
   <header className="container relative z-40 w-full ">
@@ -10,8 +10,8 @@ const Header = () => (
         <Link className="inline-block" to="/">
           <Logo className="h-40 max-w-[220px] md:max-w-[280px]" />
         </Link>
-        <Link to="/wayfinder/">
-          Wayfinder
+        <Link className="flex items-center gap-2 px-3 py-2 text-xs text-white uppercase transition border-2 border-white rounded-lg duration-800 hover:bg-white focus:text-grenadier-500 focus:bg-white hover:text-grenadier-500" to="/wayfinder/">
+          Menu <BiMenuAltRight />
         </Link>
         {/* <Nav /> */}
       </div>
