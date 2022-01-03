@@ -6,7 +6,7 @@ import { HTMLContent } from "../Content"
 export default function Video({ id, blurb, title, video }) {
   return (
     <Fade key={id}>
-      <div className="bg-gradient-to-b from-gray-100">
+      <div className="bg-gradient-to-b from-gray-100 to-gray-100 via-transparent">
         <div className="w-full max-w-screen-md px-8 mx-auto my-32">
           <h3 className="text-center">{ title }</h3>
           <iframe

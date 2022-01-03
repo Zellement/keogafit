@@ -115,18 +115,23 @@ Buttons
   @apply text-white shadow-xl bg-grenadier-500;
 }
 
-
-
 /* --------------------------
 Content
 -------------------------- */
-
 
 .content p {
   @apply mb-8 leading-relaxed lg:text-lg;
 }
 .content--small p {
   @apply text-xs lg:text-sm;
+}
+
+.content ul {
+  @apply flex flex-col gap-2;
+}
+
+.content ul li {
+  @apply ml-8 list-disc lg:text-lg;
 }
 
 .with-after-line {
@@ -162,8 +167,9 @@ With After Line (title)
   @apply absolute left-0 w-4 h-4 transform -translate-y-1/2 bg-white rounded-full top-1/2;
 }
 
-
-/* Wayfinder */
+/* --------------------------
+Wayfinder
+-------------------------- */
 
 .wayfinder ul li {
   @apply flex border-b-2 border-grenadier-700;

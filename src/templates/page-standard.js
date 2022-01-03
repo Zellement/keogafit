@@ -9,6 +9,7 @@ import Biography from "../components/PageBuilder/Biography"
 import ContentBlock from "../components/PageBuilder/ContentBlock"
 import RelatedPages from "../components/PageBuilder/RelatedPages"
 import Video from "../components/PageBuilder/Video"
+import Faqs from "../components/PageBuilder/Faqs"
 
 export default function PageStandard({ data }) {
   const post = data.datoCmsPage
@@ -84,6 +85,15 @@ export default function PageStandard({ data }) {
                   blurb={content.videoBlurb}
                   title={content.videoTitle}
                   video={content.video}
+                />
+              )
+
+            case "faq":
+              return (
+                <Faqs
+                  id={content.id}
+                  faqs={content.faqs}
+                  title={content.faqSectionTitle}
                 />
               )
           }
