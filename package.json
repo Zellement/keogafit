@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-tailwind-starter",
+  "name": "keogafit",
   "private": false,
-  "description": "A simple starter to get up and developing quickly with Gatsby v3",
+  "description": "Kettle bells meets yoga",
   "version": "0.1.0",
   "author": "Dan Farrow <dan@zellement>",
   "dependencies": {
@@ -52,6 +52,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Zellement/gatsby-tailwind-starter"
+    "url": "https://github.com/Zellement/keogafit"
   }
 }

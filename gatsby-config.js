@@ -2,8 +2,8 @@ require("dotenv").config()
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby & Tailwind Starter`,
-    description: `An opinionated starter for Gatsby v3 with TailwindCSS, PostCSS and Framer Motion page transitions.`,
+    title: `Keogafit`,
+    description: `Kettle bells meets yoga`,
     author: `@zellement`,
   },
   plugins: [
@@ -28,13 +28,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `keogafit`,
+        short_name: `keogafit`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#d85c29`,
+        theme_color: `#d85c29`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/favicon.png`,
       },
     },
   ],
