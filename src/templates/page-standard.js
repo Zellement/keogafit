@@ -8,6 +8,7 @@ import Footer from "../components/Footer"
 import Biography from "../components/PageBuilder/Biography"
 import ContentBlock from "../components/PageBuilder/ContentBlock"
 import RelatedPages from "../components/PageBuilder/RelatedPages"
+import Video from "../components/PageBuilder/Video"
 
 export default function PageStandard({ data }) {
   const post = data.datoCmsPage
@@ -73,6 +74,16 @@ export default function PageStandard({ data }) {
                   key={content.id}
                   slug={content.slug}
                   relatedPages={content.relatedPages}
+                />
+              )
+
+            case "video":
+              return (
+                <Video
+                  id={content.id}
+                  blurb={content.videoBlurb}
+                  title={content.videoTitle}
+                  video={content.video}
                 />
               )
           }
@@ -146,6 +157,31 @@ export const query = graphql`
               alt
               gatsbyImageData
             }
+          }
+        }
+        ... on DatoCmsFaq {
+          id
+          model {
+            apiKey
+          }
+          faqs {
+            question
+            answer
+          }
+          faqSectionTitle
+        }
+        ... on DatoCmsVideo {
+          id
+          model {
+            apiKey
+          }
+          videoBlurb
+          videoTitle
+          video {
+            thumbnailUrl
+            title
+            url
+            providerUid
           }
         }
       }
