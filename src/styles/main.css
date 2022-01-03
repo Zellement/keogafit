@@ -9,7 +9,7 @@ html {
 
 body {
   font-size: 62.5%;
-  @apply font-sans text-sm antialiased font-normal leading-normal bg-grenadier-200 xl:text-base;
+  @apply font-sans text-sm antialiased font-normal leading-normal bg-white xl:text-base;
 }
 
 .container {
@@ -83,6 +83,10 @@ h2 span {
   @apply text-grenadier-500;
 }
 
+h3 {
+  @apply font-serif text-2xl font-normal lowercase md:text-3xl xl:text-4xl ;
+}
+
 .content_block.bg-grenadier-500 h2 span {
   @apply text-grenadier-200;
 }
@@ -103,6 +107,15 @@ Buttons
   @apply bg-white shadow-xl text-grenadier-500;
 }
 
+.btn--grenadier-500-outline {
+  @apply border-2 text-grenadier-500 border-grenadier-500;
+}
+
+.btn--grenadier-500-outline:hover  {
+  @apply text-white shadow-xl bg-grenadier-500;
+}
+
+
 
 /* --------------------------
 Content
@@ -110,7 +123,10 @@ Content
 
 
 .content p {
-  @apply mb-6 lg:text-lg;
+  @apply mb-8 leading-relaxed lg:text-lg;
+}
+.content--small p {
+  @apply text-xs lg:text-sm;
 }
 
 .with-after-line {

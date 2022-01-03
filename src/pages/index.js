@@ -3,7 +3,6 @@ import Seo from "../components/Seo"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { graphql, Link } from "gatsby"
 import Ampersand from "../components/Ampersand"
-import Header from "../components/Header"
 import Footer from "../components/Footer"
 
 const IndexPage = ({ data }) => {
@@ -47,7 +46,7 @@ const IndexPage = ({ data }) => {
             {data.datoCmsHomePage.buttons.map((button, index) => (
               <Link
                 className="btn btn--white-outline"
-                to={button.link.slug + "/"}
+                to={"/" + button.link.slug + "/"}
                 key={index}
               >
                 {button.link.pageTitle}

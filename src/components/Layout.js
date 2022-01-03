@@ -1,11 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 import { motion, AnimatePresence } from "framer-motion"
 
 import Header from "./Header"
 
-const duration = 0.35
+const duration = 0.6
 
 const variants = {
   initial: {
@@ -28,16 +27,6 @@ const variants = {
 }
 
 const Layout = ({ children, location }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <AnimatePresence>
       <motion.main

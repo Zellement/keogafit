@@ -3,9 +3,11 @@ import { graphql } from "gatsby"
 import Seo from "../components/Seo"
 import { HTMLContent } from "../components/Content"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { Fade } from "react-reveal"
-import ContentBlock__Content from "../components/content-block/Content.js"
 import Footer from "../components/Footer"
+
+import Biography from "../components/PageBuilder/Biography"
+import ContentBlock from "../components/PageBuilder/ContentBlock"
+import RelatedPages from "../components/PageBuilder/RelatedPages"
 
 export default function PageStandard({ data }) {
   const post = data.datoCmsPage
@@ -14,12 +16,12 @@ export default function PageStandard({ data }) {
     <>
       <Seo title={post.seo.title} description={post.seo.description} />
       <div className="relative">
-        <div className="container flex flex-col px-8 py-16 lg:p-16 xl:p-24 3xl:px-2 pt-[200px] text-white lg:pt-[200px] xl:pt-[200px]">
-          <h1 className="self-start mb-8 text-5xl lg:text-7xl xl:text-8xl">
+        <div className="container flex flex-col px-8 py-16 lg:p-16 xl:p-24 3xl:px-8 pt-[200px] text-white lg:pt-[200px] xl:pt-[200px]">
+          <h1 className="self-start mb-12 text-5xl lg:text-7xl xl:text-8xl">
             {post.pageTitle}
           </h1>
 
-          <p className="self-start with-after-line text-grenadier-200">
+          <p className="self-start mb-4 with-after-line text-grenadier-200">
             {post.minorStatement}
           </p>
 
@@ -37,49 +39,42 @@ export default function PageStandard({ data }) {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 mx-auto overflow-hidden bg-white max-w-screen-4xl">
-        {post.pageBuilder.map((content, index) => {
+      <div className="grid grid-cols-1 mx-auto overflow-hidden bg-white">
+        {post.pageBuilder.map((content) => {
           switch (content.model.apiKey) {
             case "content_block":
               imageRight = !imageRight
               return (
-                <Fade>
-                  <div
-                    key={index}
-                    className={
-                      "grid grid-cols-1 lg:grid-cols-2 pt-8 lg:py-40 " +
-                      (imageRight
-                        ? null
-                        : "bg-grenadier-500 content_block text-white")
-                    }
-                  >
-                    <div
-                      className={
-                        "order-last overflow-hidden " +
-                        (imageRight
-                          ? "lg:rounded-tl-2xl lg:rounded-bl-2xl"
-                          : "lg:order-first lg:rounded-tr-2xl lg:rounded-br-2xl")
-                      }
-                    >
-                      <GatsbyImage
-                        className={"object-cover w-full h-full"}
-                        image={content.image.gatsbyImageData}
-                        alt={content.image.alt}
-                      />
-                    </div>
+                <ContentBlock
+                  key={content.id}
+                  image={content.image}
+                  imageRight={imageRight}
+                  contentTitle={content.contentTitle}
+                  content={content.content}
+                  buttons={content.buttons}
+                />
+              )
 
-                    <div className={"flex lg:my-20"}>
-                      <ContentBlock__Content
-                        contentTitle={content.contentTitle}
-                        content={content.content}
-                        imageRight={imageRight}
-                        buttons={content.buttons}
-                      />
-                    </div>
-                  </div>
-                </Fade>
+            case "biography":
+              return (
+                <Biography
+                  id={content.id}
+                  image={content.image}
+                  title={content.title}
+                  biography={content.biography}
+                />
+              )
+
+            case "related_page":
+              return (
+                <RelatedPages
+                  id={content.id}
+                  slug={content.slug}
+                  relatedPages={content.relatedPages}
+                />
               )
           }
+          return null
         })}
       </div>
       <Footer />
@@ -142,6 +137,12 @@ export const query = graphql`
           relatedPages {
             pageTitle
             slug
+            minorStatement
+            majorStatement
+            heroImage {
+              alt
+              gatsbyImageData
+            }
           }
         }
       }
