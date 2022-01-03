@@ -13,8 +13,8 @@ export default function Biography(
 ) {
   return (
     <Fade key={id}>
-      <div className="container grid grid-cols-1 my-32 lg:my-16 lg:grid-cols-2 lg:gap-16 xl:gap-32 lg:px-8">
-        <div className="w-11/12 mx-auto lg:w-full">
+      <div className="container grid grid-cols-1 lg:grid-cols-2 lg:gap-16 xl:gap-32 lg:px-8">
+        <div className="w-11/12 pt-24 mx-auto lg:w-full">
           <GatsbyImage
             className={"object-cover w-full h-full grayscale rounded-2xl "}
             image={image.gatsbyImageData}

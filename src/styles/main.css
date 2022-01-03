@@ -96,7 +96,7 @@ Buttons
 -------------------------- */
 
 .btn {
-  @apply relative z-10 px-5 py-2 text-xs tracking-wider uppercase transition-all duration-700 rounded-lg cursor-pointer lg:text-sm;
+  @apply relative z-10 inline-flex px-5 py-2 text-xs tracking-wider uppercase transition-all duration-700 rounded-lg cursor-pointer lg:text-sm;
 }
 
 .btn--white-outline {
@@ -170,9 +170,16 @@ With After Line (title)
 }
 
 .wayfinder ul li a {
-  @apply block w-full px-8 py-4 transition duration-700 hover:bg-grenadier-700 focus:bg-grenadier-700;
+  @apply relative block w-full max-w-screen-xl px-8 py-4 mx-auto overflow-hidden transition-all duration-1000 hover:pl-16;
 }
 
-/* .wayfinder ul li:nth-of-type(odd) a {
-  @apply bg-grenadier-400 bg-opacity-10 hover:bg-grenadier-700 focus:bg-grenadier-700;
-} */
+.wayfinder ul li a:after {
+  content: '';
+  clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 0% 100%);
+  @apply absolute inset-0 block w-full transition duration-1000 transform translate-y-full bg-gradient-to-r from-grenadier-700 to-transparent -z-10;
+}
+
+.wayfinder ul li a:hover:after,
+.wayfinder ul li a:focus:after {
+  @apply translate-y-0;
+}

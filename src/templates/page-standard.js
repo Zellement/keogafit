@@ -59,6 +59,7 @@ export default function PageStandard({ data }) {
               return (
                 <Biography
                   id={content.id}
+                  key={content.id}
                   image={content.image}
                   title={content.title}
                   biography={content.biography}
@@ -69,6 +70,7 @@ export default function PageStandard({ data }) {
               return (
                 <RelatedPages
                   id={content.id}
+                  key={content.id}
                   slug={content.slug}
                   relatedPages={content.relatedPages}
                 />
@@ -139,6 +141,7 @@ export const query = graphql`
             slug
             minorStatement
             majorStatement
+            offPageBlurb
             heroImage {
               alt
               gatsbyImageData
