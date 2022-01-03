@@ -8,15 +8,15 @@ export default function Wayfinder() {
   return (
     <>
       <Seo title="Menu" />
-      <div className="fixed inset-0 z-40 w-full h-screen text-3xl text-white bg-gradient-to-b from-grenadier-500 to-grenadier-700">
+      <div className="fixed inset-0 z-40 w-full h-screen text-3xl text-white 2xl:text-6xl bg-gradient-to-b from-grenadier-500 to-grenadier-700">
         <div
           className="absolute top-0 left-0 z-50 inline-flex items-center w-auto gap-2 p-2 px-3 py-2 mt-8 ml-8 text-xs text-white uppercase transition duration-700 border-2 border-white rounded-lg cursor-pointer hover:bg-white focus:text-grenadier-500 focus:bg-white hover:text-grenadier-500"
           onClick={() => navigate(-1)}
         >
           <BiArrowToLeft /> Go Back
         </div>
-        <nav className="pt-32 wayfinder ">
-          <ul className="flex flex-col ">
+        <nav className="max-w-screen-xl pt-32 mx-auto wayfinder">
+          <ul className="flex flex-col">
             <li>
               <Link className="" to="/">
                 Home

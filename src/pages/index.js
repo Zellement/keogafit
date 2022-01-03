@@ -24,7 +24,7 @@ const IndexPage = ({ data }) => {
           alt={data.datoCmsHomePage.backgroundImage.alt}
         />
       </div>
-      <section className=" min-h-screen container p-8 pt-[200px] text-white lg:p-16 xl:p-24 lg:pt-[240px] xl:pt-[300px]">
+      <section className="min-h-screen container px-8 lg:px-16 xl:px-24 3xl:px-2 pt-[200px] text-white lg:pt-[240px] xl:pt-[300px]">
         <div className="content">
           <h1 className="sr-only">Keogafit</h1>
         </div>

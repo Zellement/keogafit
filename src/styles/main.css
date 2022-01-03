@@ -150,13 +150,13 @@ With After Line (title)
 /* Wayfinder */
 
 .wayfinder ul li {
-  @apply flex;
+  @apply flex border-b-2 border-grenadier-700;
 }
 
 .wayfinder ul li a {
   @apply block w-full px-8 py-4 transition duration-700 hover:bg-grenadier-700 focus:bg-grenadier-700;
 }
 
-.wayfinder ul li:nth-of-type(odd) a {
+/* .wayfinder ul li:nth-of-type(odd) a {
   @apply bg-grenadier-400 bg-opacity-10 hover:bg-grenadier-700 focus:bg-grenadier-700;
-}
+} */
