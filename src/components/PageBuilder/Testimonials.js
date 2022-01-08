@@ -14,7 +14,7 @@ export default function Testimonials( {id, testimonialTitle, testimonials }) {
               <div className="relative p-16 shadow-lg rounded-xl">
               <ImQuotesLeft className="absolute top-0 left-0 -mt-4 -ml-4 text-5xl opacity-5" />
               <HTMLContent className="content content--small" content={ testimonial.content } />
-              <p className="font-serif text-xl text-grenadier-500">{ testimonial.name }</p>
+              { testimonial.name ? <p className="font-serif text-xl text-grenadier-500">{ testimonial.name }</p> : null }
               </div>
             ))}
           </div>
