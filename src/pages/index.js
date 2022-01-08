@@ -7,12 +7,12 @@ import Footer from "../components/Footer"
 import { Fade } from "react-reveal"
 
 const IndexPage = ({ data }) => {
-  // console.log(data.datoCmsHomePage.buttons)
   return (
     <>
       <Seo title="Home" />
       {/* Full background image */}
-      <div className="fixed inset-0 w-full h-screen bg-red-500 -z-10 ">
+      <div className="absolute inset-0 w-full h-full pointer-events-none -z-10 bg-gradient-to-b from-grenadier-500 to-grenadier-700 homepage-overlay"></div>
+      <div className="fixed inset-0 w-full h-screen -z-20 ">
         <GatsbyImage
           className="w-full h-full lg:hidden"
           image={data.datoCmsHomePage.backgroundImageMobile.gatsbyImageData}

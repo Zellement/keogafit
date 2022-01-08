@@ -59,7 +59,7 @@ export default class ContactForm extends React.Component {
         className="text-black form"
         name="quick-contact"
         method="post"
-        action="/thank-you/"
+        action="/thanks/"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         onSubmit={this.handleSubmit}
@@ -69,8 +69,8 @@ export default class ContactForm extends React.Component {
           Do not fill this in
           <input name="bot-field" />
         </label>
-        <div className="flex flex-row flex-wrap justify-between">
-          <div className="flex flex-col flex-1">
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-row flex-1 gap-4">
             <label className="relative flex w-full p-1">
               <input
                 className="flex-grow p-4 text-sm text-gray-800 placeholder-gray-500 rounded-lg bg-grenadier-300"
@@ -97,13 +97,13 @@ export default class ContactForm extends React.Component {
             </label>
           </div>
           <label className="relative flex flex-1 p-1">
-            <input
-              className="flex-grow p-4 text-sm text-gray-800 placeholder-gray-500 rounded-lg bg-grenadier-300"
+            <textarea
+              className="flex-grow p-4 text-sm text-gray-800 placeholder-gray-500 rounded-lg bg-grenadier-300 min-h-[170px]"
               placeholder="Details *"
               type="text"
               name="details"
               onChange={this.handleChange}
-            />
+            ></textarea>
             {this.validator.message(
               "details",
               this.state.details,

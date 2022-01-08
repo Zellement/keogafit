@@ -218,3 +218,20 @@ details ul li:before {
   content: '';
   @apply absolute left-0 w-4 h-4 transform -translate-y-1/2 bg-white rounded-full top-1/2;
 }
+
+/* --------------------------
+Homepage fadeout
+-------------------------- */
+
+.homepage-overlay {
+      -webkit-animation: fadeout 4s forwards; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadeout 4s forwards; /* Firefox < 16 */
+        -ms-animation: fadeout 4s forwards; /* Internet Explorer */
+         -o-animation: fadeout 4s forwards; /* Opera < 12.1 */
+            animation: fadeout 4s forwards;
+}
+
+@keyframes fadeout {
+    from { opacity: 0.8; }
+    to   { opacity: 0; }
+}
