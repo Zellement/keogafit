@@ -13,7 +13,7 @@ export default function Faqs({ id, faqs, title }) {
             {faqs.map((faq) => (
               <details className="">
                 <summary className="mb-4 font-serif text-lg cursor-pointer lg:text-xl text-grenadier-500 hover:text-grenadier-700 focus:text-grenadier-700">{faq.question}</summary>
-                <HTMLContent className="content" content={faq.answer} />
+                <HTMLContent content={faq.answer} />
               </details>
             ))}
           </div>
