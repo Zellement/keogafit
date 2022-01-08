@@ -3,13 +3,14 @@ import React from "react"
 
 export default function Footer() {
   return (
-    <footer className="px-8 py-8 overflow-hidden text-sm text-white lg:py-16 lg:px-16 xl:px-24 3xl:px-8 bg-grenadier-800">
+    <footer className="overflow-hidden text-sm text-white bg-gradient-to-b from-grenadier-700 to-grenadier-800">
+    <div className="container px-8 py-8 lg:py-16 lg:px-16 xl:px-24 3xl:px-8 ">
     <nav
       >
         <ul className={"flex flex-row gap-4 flex-wrap"}>
           <li>
             <Link
-              className="hover:text-grenadier-200 focus:text-grenadier-200 transition duration-1000"
+              className="transition duration-1000 hover:text-grenadier-200 focus:text-grenadier-200"
               activeClassName="is-active"
               to="/"
             >
@@ -18,7 +19,7 @@ export default function Footer() {
           </li>
           <li>
             <Link
-              className="hover:text-grenadier-200 focus:text-grenadier-200 transition duration-1000"
+              className="transition duration-1000 hover:text-grenadier-200 focus:text-grenadier-200"
               activeClassName="is-active"
               to="/what-is-keogafit/"
             >
@@ -27,7 +28,7 @@ export default function Footer() {
           </li>
           <li>
             <Link
-              className="hover:text-grenadier-200 focus:text-grenadier-200 transition duration-1000"
+              className="transition duration-1000 hover:text-grenadier-200 focus:text-grenadier-200"
               activeClassName="is-active"
               to="/classes/"
             >
@@ -36,7 +37,7 @@ export default function Footer() {
           </li>
           <li>
             <Link
-              className="hover:text-grenadier-200 focus:text-grenadier-200 transition duration-1000"
+              className="transition duration-1000 hover:text-grenadier-200 focus:text-grenadier-200"
               activeClassName="is-active"
               to="/about-us/"
             >
@@ -45,7 +46,7 @@ export default function Footer() {
           </li>
           <li>
             <Link
-              className="hover:text-grenadier-200 focus:text-grenadier-200 transition duration-1000"
+              className="transition duration-1000 hover:text-grenadier-200 focus:text-grenadier-200"
               activeClassName="is-active"
               to="/testimonials/"
             >
@@ -54,7 +55,7 @@ export default function Footer() {
           </li>
           <li>
             <Link
-              className="hover:text-grenadier-200 focus:text-grenadier-200 transition duration-1000"
+              className="transition duration-1000 hover:text-grenadier-200 focus:text-grenadier-200"
               activeClassName="is-active"
               to="/contact-us/"
             >
@@ -72,6 +73,7 @@ export default function Footer() {
         >
           Web Design by Zellement
         </a>
+      </div>
     </footer>
   )
 }

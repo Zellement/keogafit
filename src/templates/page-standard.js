@@ -11,6 +11,7 @@ import RelatedPages from "../components/PageBuilder/RelatedPages"
 import Video from "../components/PageBuilder/Video"
 import Faqs from "../components/PageBuilder/Faqs"
 import { Fade } from "react-reveal"
+import Testimonials from "../components/PageBuilder/Testimonials"
 
 export default function PageStandard({ data }) {
   const post = data.datoCmsPage
@@ -103,8 +104,17 @@ export default function PageStandard({ data }) {
                   title={content.faqSectionTitle}
                 />
               )
+
+            case "testimonial":
+              return (
+                <Testimonials
+                  id={content.id}
+                  testimonialTitle={content.testimonialSectionTitle}
+                  testimonials={content.testimonials}
+                />
+              )
+            default: return null
           }
-          return null
         })}
       </div>
       <Footer />
@@ -199,6 +209,17 @@ export const query = graphql`
             title
             url
             providerUid
+          }
+        }
+        ... on DatoCmsTestimonial {
+          id
+          model {
+            apiKey
+          }
+          testimonialSectionTitle
+          testimonials {
+            content
+            name
           }
         }
       }

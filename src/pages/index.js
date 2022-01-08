@@ -24,19 +24,19 @@ const IndexPage = ({ data }) => {
           alt={data.datoCmsHomePage.backgroundImage.alt}
         />
       </div>
-      <section className="min-h-screen overflow-hidden container px-8 lg:px-16 xl:px-24 3xl:px-2 pt-[200px] text-white lg:text-grenadier-500 lg:pt-[240px] xl:pt-[300px]">
+      <section className="min-h-screen overflow-hidden container px-8 py-8 mb-4  lg:py-16 lg:px-16 xl:px-24 3xl:px-8 pt-[200px] text-white lg:text-grenadier-500 lg:pt-[240px]">
         <div className="content">
           <h1 className="sr-only">Keogafit</h1>
         </div>
 
-        <div className="flex flex-col gap-8 ">
+        <div className="flex flex-col">
           <Fade delay={500}>
-            <p className="self-start  with-after-line">
+            <p className="self-start mb-4 with-after-line">
               {data.datoCmsHomePage.introStatement}
             </p>
           </Fade>
 
-          <div className="relative flex flex-col text-3xl font-semibold lowercase sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl">
+          <div className="relative flex flex-col text-3xl font-semibold lowercase sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl 2xl:text-10xl">
             <Fade delay={1000}>
               <span className="leading-tight">Mindfulness</span>
             </Fade>
@@ -46,25 +46,25 @@ const IndexPage = ({ data }) => {
             </Fade>
 
             <Fade delay={1500}>
-              <span className="absolute text-grenadier-100 lg:text-grenadier-200 w-20 left-[198px] -mt-4 sm:left-[237px] md:w-24 md:left-[287px] lg:left-[356px] lg:w-28 xl:w-40 xl:left-[474px]">
+              <span className="absolute text-grenadier-100 lg:text-grenadier-200 w-20 left-[198px] -mt-4 sm:left-[237px] md:w-24 md:left-[287px] lg:left-[356px] lg:w-28 xl:w-40 xl:left-[474px] 2xl:left-[580px] 2xl:w-48">
                 <Ampersand />
               </span>
             </Fade>
           </div>
 
-        <Fade delay={2500}>
-          <div className="flex flex-row flex-wrap gap-2">
-            {data.datoCmsHomePage.buttons.map((button, index) => (
-              <Link
-                className="btn btn--homepage"
-                to={"/" + button.link.slug + "/"}
-                key={index}
-              >
-                {button.link.pageTitle}
-              </Link>
-            ))}
-          </div>
-        </Fade>
+          <Fade delay={2500}>
+            <div className="flex flex-row flex-wrap gap-2 mt-12">
+              {data.datoCmsHomePage.buttons.map((button, index) => (
+                <Link
+                  className="btn btn--homepage"
+                  to={"/" + button.link.slug + "/"}
+                  key={index}
+                >
+                  {button.link.pageTitle}
+                </Link>
+              ))}
+            </div>
+          </Fade>
         </div>
       </section>
       <Footer />
