@@ -7,16 +7,21 @@ import Footer from "../components/Footer"
 
 import Biography from "../components/PageBuilder/Biography"
 import ContentBlock from "../components/PageBuilder/ContentBlock"
-import RelatedPages from "../components/PageBuilder/RelatedPages"
+import RelatedPage from "../components/PageBuilder/RelatedPage"
 import Video from "../components/PageBuilder/Video"
 import Faqs from "../components/PageBuilder/Faqs"
 import { Fade } from "react-reveal"
 import Testimonials from "../components/PageBuilder/Testimonials"
 import ClassListing from "../components/PageBuilder/ClassListing"
 
+
 export default function PageStandard({ data }) {
+  // Set a smaller variable for the data
   const post = data.datoCmsPage
+  // Image right for the content blocks
   let imageRight = false
+  // Black & white coloured image for the related pages section
+  let bwColour = true
   return (
     <>
       <Seo title={post.seo.title} description={post.seo.description} />
@@ -79,12 +84,41 @@ export default function PageStandard({ data }) {
 
             case "related_page":
               return (
-                <RelatedPages
-                  id={content.id}
-                  key={content.id}
-                  slug={content.slug}
-                  relatedPages={content.relatedPages}
-                />
+                <Fade>
+                  <div className="flex flex-col w-full mx-auto my-32 max-w-screen-4xl md:flex-row">
+                    {content.relatedPages.map((page, index) => {
+                      bwColour = !bwColour
+                      switch (page.model.apiKey) {
+                        case "contact_page":
+                          return (
+                            <RelatedPage
+                              index={index}
+                              slug={page.slug}
+                              image={page.heroImage.gatsbyImageData}
+                              alt={page.heroImage.alt}
+                              bwColour={bwColour}
+                              pageTitle={page.pageTitle}
+                              offPageBlurb={page.offPageBlurb}
+                            />
+                          )
+                        case "page":
+                          return (
+                            <RelatedPage
+                              index={index}
+                              slug={page.slug}
+                              image={page.heroImage.gatsbyImageData}
+                              alt={page.heroImage.alt}
+                              bwColour={bwColour}
+                              pageTitle={page.pageTitle}
+                              offPageBlurb={page.offPageBlurb}
+                            />
+                          )
+                        default:
+                          return null
+                      }
+                    })}
+                  </div>
+                </Fade>
               )
 
             case "video":
@@ -193,14 +227,35 @@ export const query = graphql`
             apiKey
           }
           relatedPages {
-            pageTitle
-            slug
-            minorStatement
-            majorStatement
-            offPageBlurb
-            heroImage {
-              alt
-              gatsbyImageData(height: 400, width: 700)
+            ... on DatoCmsPage {
+              id
+              model {
+                apiKey
+              }
+              pageTitle
+              slug
+              minorStatement
+              majorStatement
+              offPageBlurb
+              heroImage {
+                alt
+                gatsbyImageData(height: 400, width: 700)
+              }
+            }
+            ... on DatoCmsContactPage {
+              id
+              model {
+                apiKey
+              }
+              pageTitle
+              slug
+              minorStatement
+              majorStatement
+              offPageBlurb
+              heroImage {
+                alt
+                gatsbyImageData(height: 400, width: 700)
+              }
             }
           }
         }
