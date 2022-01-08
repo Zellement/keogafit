@@ -84,7 +84,7 @@ h2 span {
 }
 
 h3 {
-  @apply font-serif text-2xl font-normal lowercase md:text-3xl xl:text-4xl ;
+  @apply font-serif text-xl font-normal lowercase md:text-3xl xl:text-4xl ;
 }
 
 .content_block.bg-grenadier-500 h2 span {
@@ -140,6 +140,10 @@ Content
 
 .content ul li {
   @apply ml-8 list-disc lg:text-lg;
+}
+
+.content a {
+  @apply underline hover:opacity-75;
 }
 
 .with-after-line {

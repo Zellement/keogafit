@@ -12,6 +12,7 @@ import Video from "../components/PageBuilder/Video"
 import Faqs from "../components/PageBuilder/Faqs"
 import { Fade } from "react-reveal"
 import Testimonials from "../components/PageBuilder/Testimonials"
+import ClassListing from "../components/PageBuilder/ClassListing"
 
 export default function PageStandard({ data }) {
   const post = data.datoCmsPage
@@ -28,16 +29,16 @@ export default function PageStandard({ data }) {
           </Fade>
 
           <Fade up delay={1250}>
-          <p className="self-start mb-4 with-after-line text-grenadier-200">
-            {post.minorStatement}
-          </p>
+            <p className="self-start mb-4 with-after-line text-grenadier-200">
+              {post.minorStatement}
+            </p>
           </Fade>
 
           <Fade up delay={1750}>
-          <HTMLContent
-            className="font-serif text-xl lg:text-3xl max-w-[800px] hero__content "
-            content={post.majorStatement}
-          />
+            <HTMLContent
+              className="font-serif text-xl lg:text-3xl max-w-[800px] hero__content "
+              content={post.majorStatement}
+            />
           </Fade>
 
           <div className="absolute inset-0 w-full bg-red-500 -z-10">
@@ -113,7 +114,24 @@ export default function PageStandard({ data }) {
                   testimonials={content.testimonials}
                 />
               )
-            default: return null
+
+            case "class_listing":
+              return (
+                <ClassListing
+                  id={content.id}
+                  classListingTitle={content.classListingTitle}
+                  digitalClassesTitle={content.digitalClassesTitle}
+                  digitalClassesOverview={content.digitalClassesOverview}
+                  digitalClasses={content.digitalClasses}
+                  faceToFaceClassesTitle={content.faceToFaceClassesTitle}
+                  faceToFaceClassesOverview={content.faceToFaceClassesOverview}
+                  faceToFaceClasses={content.faceToFaceClasses}
+                  supportingImage={content.supportingImage}
+                />
+              )
+
+            default:
+              return null
           }
         })}
       </div>
@@ -220,6 +238,34 @@ export const query = graphql`
           testimonials {
             content
             name
+          }
+        }
+        ... on DatoCmsClassListing {
+          id
+          model {
+            apiKey
+          }
+          classListingTitle
+          supportingImage {
+            alt
+            gatsbyImageData
+          }
+          digitalClassesTitle
+          digitalClassesOverview
+          digitalClasses {
+            time
+            dayOfTheWeek
+          }
+          faceToFaceClassesTitle
+          faceToFaceClassesOverview
+          faceToFaceClasses {
+            location {
+              latitude
+              longitude
+            }
+            time
+            dayOfTheWeek
+            venue
           }
         }
       }

@@ -21,7 +21,7 @@ export default function Biography(
             alt={image.alt}
           />
         </div>
-        <div className="relative w-10/12 p-12 mx-auto -mt-8 bg-white lg:w-full rounded-2xl md:-mt-32 lg:my-auto md:p-24">
+        <div className="relative w-10/12 p-12 mx-auto -mt-16 bg-white lg:w-full rounded-2xl md:-mt-32 lg:my-auto md:p-24">
           <h3 className="text-grenadier-500">{title}</h3>
           <HTMLContent
             className="content content--small"

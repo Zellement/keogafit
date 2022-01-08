@@ -20,6 +20,12 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-plugin-catch-links`,
+      options: {
+        excludePattern: /(excluded-link|external)/,
+      },
+    },
+    {
       resolve: `gatsby-source-datocms`,
       options: {
         apiToken: process.env.DATOCMS,
@@ -39,5 +45,3 @@ module.exports = {
     },
   ],
 }
-
-
