@@ -165,7 +165,7 @@ export const query = graphql`
             offPageBlurb
             heroImage {
               alt
-              gatsbyImageData
+              gatsbyImageData(height: 400, width: 700)
             }
           }
         }
