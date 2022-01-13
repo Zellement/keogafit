@@ -7,7 +7,6 @@ import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 export default function ClassLising({
-  id,
   classListingTitle,
   digitalClassesTitle,
   digitalClassesOverview,
@@ -18,7 +17,7 @@ export default function ClassLising({
   supportingImage,
 }) {
   return (
-    <Fade key={id}>
+    <Fade>
       <div className="bg-gradient-to-b from-gray-100 to-gray-100 via-transparent">
         <div className="container w-full px-8 my-32">
           <h2 className="text-center">{classListingTitle}</h2>

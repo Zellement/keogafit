@@ -1,9 +1,9 @@
 import React from "react"
 import { Fade } from "react-reveal"
 
-export default function Video({ id, blurb, title, video }) {
+export default function Video({ blurb, title, video }) {
   return (
-    <Fade key={id}>
+    <Fade>
       <div className="bg-gradient-to-b from-gray-100 to-gray-100 via-transparent">
         <div className="w-full max-w-screen-md px-8 mx-auto my-32">
           <h2 className="text-center">{ title }</h2>

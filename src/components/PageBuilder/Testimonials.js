@@ -3,9 +3,9 @@ import { Fade } from "react-reveal";
 import { HTMLContent } from "../Content";
 import { ImQuotesLeft } from "react-icons/im"
 
-export default function Testimonials( {id, testimonialTitle, testimonials }) {
+export default function Testimonials( {testimonialTitle, testimonials }) {
   return (
-    <Fade key={id}>
+    <Fade>
       <div className="bg-gradient-to-b from-gray-100 to-gray-100 via-transparent">
         <div className="container w-full px-8 my-32">
           <h3 className="text-center">{testimonialTitle}</h3>

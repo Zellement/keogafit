@@ -5,14 +5,13 @@ import { HTMLContent } from "../Content"
 
 export default function Biography(
   {
-    id,
     image,
     title,
     biography
   }
 ) {
   return (
-    <Fade key={id}>
+    <Fade>
       <div className="container grid grid-cols-1 lg:grid-cols-2 lg:gap-16 xl:gap-32 lg:px-8">
         <div className="w-11/12 pt-24 mx-auto lg:w-full">
           <GatsbyImage

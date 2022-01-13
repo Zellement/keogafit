@@ -14,7 +14,6 @@ import { Fade } from "react-reveal"
 import Testimonials from "../components/PageBuilder/Testimonials"
 import ClassListing from "../components/PageBuilder/ClassListing"
 
-
 export default function PageStandard({ data }) {
   // Set a smaller variable for the data
   const post = data.datoCmsPage
@@ -56,13 +55,14 @@ export default function PageStandard({ data }) {
         </div>
       </div>
       <div className="grid grid-cols-1 mx-auto overflow-hidden bg-white">
-        {post.pageBuilder.map((content) => {
+        {post.pageBuilder.map((content, index) => {
           switch (content.model.apiKey) {
             case "content_block":
               imageRight = !imageRight
               return (
                 <ContentBlock
                   key={content.id}
+                  id={content.id}
                   image={content.image}
                   imageRight={imageRight}
                   contentTitle={content.contentTitle}
@@ -74,7 +74,6 @@ export default function PageStandard({ data }) {
             case "biography":
               return (
                 <Biography
-                  id={content.id}
                   key={content.id}
                   image={content.image}
                   title={content.title}
@@ -84,15 +83,15 @@ export default function PageStandard({ data }) {
 
             case "related_page":
               return (
-                <Fade>
+                <Fade key={index}>
                   <div className="flex flex-col w-full mx-auto my-32 max-w-screen-4xl md:flex-row">
-                    {content.relatedPages.map((page, index) => {
+                    {content.relatedPages.map((page) => {
                       bwColour = !bwColour
                       switch (page.model.apiKey) {
                         case "contact_page":
                           return (
                             <RelatedPage
-                              index={index}
+                              key={page.id}
                               slug={page.slug}
                               image={page.heroImage.gatsbyImageData}
                               alt={page.heroImage.alt}
@@ -104,7 +103,7 @@ export default function PageStandard({ data }) {
                         case "page":
                           return (
                             <RelatedPage
-                              index={index}
+                              key={page.id}
                               slug={page.slug}
                               image={page.heroImage.gatsbyImageData}
                               alt={page.heroImage.alt}
@@ -124,7 +123,7 @@ export default function PageStandard({ data }) {
             case "video":
               return (
                 <Video
-                  id={content.id}
+                  key={content.id}
                   blurb={content.videoBlurb}
                   title={content.videoTitle}
                   video={content.video}
@@ -134,7 +133,7 @@ export default function PageStandard({ data }) {
             case "faq":
               return (
                 <Faqs
-                  id={content.id}
+                  key={content.id}
                   faqs={content.faqs}
                   title={content.faqSectionTitle}
                 />
@@ -143,7 +142,7 @@ export default function PageStandard({ data }) {
             case "testimonial":
               return (
                 <Testimonials
-                  id={content.id}
+                  key={content.id}
                   testimonialTitle={content.testimonialSectionTitle}
                   testimonials={content.testimonials}
                 />
@@ -152,7 +151,7 @@ export default function PageStandard({ data }) {
             case "class_listing":
               return (
                 <ClassListing
-                  id={content.id}
+                  key={content.id}
                   classListingTitle={content.classListingTitle}
                   digitalClassesTitle={content.digitalClassesTitle}
                   digitalClassesOverview={content.digitalClassesOverview}

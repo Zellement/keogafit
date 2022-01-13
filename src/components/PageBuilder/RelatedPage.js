@@ -3,7 +3,6 @@ import React from "react"
 import { Link } from "gatsby"
 
 export default function RelatedPages({
-  index,
   slug,
   image,
   alt,
@@ -13,7 +12,6 @@ export default function RelatedPages({
 }) {
   return (
     <Link
-      key={index}
       to={"/" + slug + "/"}
       className={
         "transition-all duration-1000 relative grid grid-cols-1 lg:grid-cols-2 w-full overflow-hidden group " +
