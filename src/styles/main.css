@@ -116,7 +116,7 @@ Buttons
 }
 
 .btn--homepage {
-  @apply text-white border-2 border-white lg:border-grenadier-500 lg:text-grenadier-500;
+  @apply text-white border-2 border-white lg:border-grenadier-500 lg:text-grenadier-500 bg-grenadier-100;
 }
 
 .btn--homepage:hover {
