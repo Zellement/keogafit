@@ -3,8 +3,9 @@ require("dotenv").config()
 module.exports = {
   siteMetadata: {
     title: `Keogafit`,
-    description: `Kettle bells meets yoga`,
+    description: `The perfect balance of mindfulness & body conditioning`,
     author: `@zellement`,
+    siteUrl: "https://www.keogafit.co.uk"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -19,6 +20,8 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sitemap`,
+    'gatsby-plugin-robots-txt',
     {
       resolve: `gatsby-plugin-catch-links`,
       options: {

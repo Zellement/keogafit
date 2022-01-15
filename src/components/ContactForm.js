@@ -70,7 +70,7 @@ export default class ContactForm extends React.Component {
           <input name="bot-field" />
         </label>
         <div className="flex flex-col gap-4">
-          <div className="flex flex-row flex-1 gap-4">
+          <div className="flex flex-col flex-1 gap-4 md:flex-row">
             <label className="relative flex w-full p-1">
               <input
                 className="flex-grow p-4 text-sm text-gray-800 placeholder-gray-500 rounded-lg bg-grenadier-300"
