@@ -92,11 +92,11 @@ export const query = graphql`
       }
       backgroundImage {
         alt
-        gatsbyImageData(layout: FULL_WIDTH)
+        gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
       }
       backgroundImageMobile {
         alt
-        gatsbyImageData(layout: FULL_WIDTH, width: 1024)
+        gatsbyImageData(layout: FULL_WIDTH, width: 1024, placeholder: BLURRED)
       }
     }
   }
