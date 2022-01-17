@@ -5,7 +5,7 @@ module.exports = {
     title: `Keogafit`,
     description: `The perfect balance of mindfulness & body conditioning`,
     author: `@zellement`,
-    siteUrl: "https://www.keogafit.co.uk"
+    siteUrl: "https://www.keogafit.co.uk",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -21,7 +21,13 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
-    'gatsby-plugin-robots-txt',
+    "gatsby-plugin-robots-txt",
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://www.keogafit.co.uk`,
+      },
+    },
     {
       resolve: `gatsby-plugin-catch-links`,
       options: {
