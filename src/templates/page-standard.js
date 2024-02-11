@@ -302,6 +302,7 @@ export const query = graphql`
           faceToFaceClassesOverview
           faceToFaceClasses {
             location
+            additionalInfo
             time
             dayOfTheWeek
             venue
