@@ -23,9 +23,11 @@ export default function ClassLising({
               <div className="grid grid-cols-1 gap-16 xl:grid-cols-4 md:grid-cols-2">
                 {faceToFaceClasses.map((f2fClass) => (
                   <div className="relative flex flex-col p-8 shadow-lg items-left lg:p-12 rounded-xl">
-                    <p className="mb-8 font-serif text-2xl text-grenadier-500">
-                      {f2fClass.location}
-                    </p>
+                    {f2fClass.location ? (
+                      <p className="mb-8 font-serif text-2xl text-grenadier-500">
+                        {f2fClass.location}
+                      </p>
+                    ) : null}
                     <p className="font-serif text-xl text-grenadier-500">
                       {f2fClass.dayOfTheWeek} @ {f2fClass.time}
                     </p>
