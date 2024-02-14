@@ -299,27 +299,14 @@ export const query = graphql`
           model {
             apiKey
           }
-          classListingTitle
-          supportingImage {
-            alt
-            gatsbyImageData
-          }
-          digitalClassesTitle
-          digitalClassesOverview
-          digitalClasses {
-            time
-            dayOfTheWeek
-          }
-          faceToFaceClassesTitle
           faceToFaceClassesOverview
           faceToFaceClasses {
-            location {
-              latitude
-              longitude
-            }
+            location
+            additionalInfo
             time
             dayOfTheWeek
             venue
+            book
           }
         }
       }
